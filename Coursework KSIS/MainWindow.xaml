@@ -1,0 +1,16 @@
+﻿<Window x:Class="Coursework_KSIS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Coursework_KSIS"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="800" 
+        ResizeMode="NoResize" AllowsTransparency="True"
+        WindowStyle="None" WindowStartupLocation="CenterScreen" Background="#49225b"
+        Loaded="Window_Loaded">
+
+    <Border CornerRadius="15" Background="#49225b" MouseDown="Border_MouseDown">
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+    </Border>
+</Window>

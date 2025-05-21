@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Coursework_KSIS.UserControls.UsersListUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Coursework_KSIS.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="boolToVis"/>
+    </UserControl.Resources>
+    
+    <Grid Background="#49225b">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#6e3482">
+            <Label Content="Пользователи" Foreground="AliceBlue" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" MinWidth="150">
+                    <TextBlock Margin="25 0" VerticalAlignment="Center" Panel.ZIndex="1" IsHitTestVisible="False" 
+                        FontSize="12" Text="Введите имя пользователя" Foreground="#FFEADDF0"
+                        Visibility="{Binding ElementName=Search_TB, Path=Text.IsEmpty, Converter={StaticResource boolToVis}}"/>
+                    <TextBox Padding="15" Margin="10 10 5 10" BorderThickness="0" Style="{StaticResource enterTextBox}" x:Name="Search_TB"/>
+                </Grid>
+                <Grid Grid.Column="1" MinWidth="50">
+                    <Button x:Name="ButtonSearch" Style="{StaticResource ExitButton}" 
+                        Grid.Column="2" Margin="0 0 5 0" Foreground="#49225b" 
+                        Background="#FF49225B" BorderBrush="#49225b" BorderThickness="0" 
+                        Cursor="Hand" Click="ButtonSearch_Click">
+                        <Label Content="->" Foreground="#FFEADDF0" FontWeight="Bold" FontSize="18"/>
+                    </Button>
+                </Grid>
+            </Grid>
+
+            <ScrollViewer Grid.Row="1" MaxHeight="440" VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="UsersContainer">
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>

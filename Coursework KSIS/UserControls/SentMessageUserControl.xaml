@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="Coursework_KSIS.UserControls.SentMessageUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Coursework_KSIS.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="150">
+
+    <Border CornerRadius="7" Background="#a56abd" BorderThickness="1" BorderBrush="#a56abd" HorizontalAlignment="Right" Margin="10 5 10 5">
+        <Grid>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                <Label FontSize="12" Margin="5" Foreground="#FFEADDF0" x:Name="Msg_LBL"/>
+                <Label FontSize="8" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5 0 5 5" Foreground="#FFEADDF0" x:Name="Date_LBL"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Coursework_KSIS.UserControls.UserChatMiniUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Coursework_KSIS.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="315"
+             MouseDown="UserControl_MouseDown">
+    
+    <Border Background="#6e3482" CornerRadius="7" BorderBrush="#6e3482" BorderThickness="1" Margin="10 10 10 0">
+        <Grid>
+            <StackPanel Orientation="Vertical">
+                <Label Foreground="#FFEADDF0" FontSize="14" FontWeight="Bold" Margin="5" x:Name="Name_LBL"/>
+                <Label Foreground="#FFEADDF0" FontSize="10" FontWeight="Bold" Margin="5" x:Name="LastMsg_LBL"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

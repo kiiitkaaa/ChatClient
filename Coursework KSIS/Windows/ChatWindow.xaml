@@ -1,0 +1,92 @@
+﻿<Window x:Class="Coursework_KSIS.Windows.ChatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Coursework_KSIS.Windows"
+        mc:Ignorable="d"
+        Title="Kitk" Height="650" Width="1050"
+        WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+
+    <Grid Background="#49225b" MouseDown="Grid_MouseDown">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border BorderBrush="#6e3482" BorderThickness="2">
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Margin="60 0 0 0"  Content="Kitk" Foreground="#FFEADDF0" FontSize="20" FontWeight="Bold"/>
+                <Button x:Name="ButtonMin" Style="{StaticResource ExitButton}" Grid.Column="1" Margin="0 0 5 0" Foreground="#49225b" Background="#FF49225B" BorderBrush="#49225b" BorderThickness="0" Cursor="Hand" Click="ButtonMin_Click">
+                    <Label Content="_" Foreground="#FFEADDF0" FontWeight="Bold" FontSize="18"/>
+                </Button>
+                <Button x:Name="ButtonClose" Style="{StaticResource ExitButton}" Grid.Column="2" Margin="0 0 5 0" Foreground="#49225b" Background="#FF49225B" BorderBrush="#49225b" BorderThickness="0" Cursor="Hand" IsCancel="True" Click="ButtonClose_Click">
+                    <Label Content="X" Foreground="#FFEADDF0" FontWeight="Bold" FontSize="18"/>
+                </Button>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.30*" MinWidth="250" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="0.70*" MinWidth="500"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <StackPanel x:Name="MiniContainer">
+                        
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="1" Background="#6e3482">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" Height="50">
+                        <Button x:Name="ButtonUsers" Style="{StaticResource GroupButton}" Grid.Column="2" Margin="0 0 5 0" Foreground="#49225b" Background="#FF49225B" BorderBrush="#49225b" BorderThickness="0" Cursor="Hand" Click="ButtonUsers_Click">
+                            <Label Content="Пользователи" Foreground="#FFEADDF0" FontWeight="Bold" FontSize="12"/>
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Button x:Name="ButtonChats" Style="{StaticResource GroupButton}" Grid.Column="2" Margin="0 0 5 0" Foreground="#49225b" Background="#FF49225B" BorderBrush="#49225b" BorderThickness="0" Cursor="Hand" Click="ButtonChats_Click">
+                            <Label Content="Чаты" Foreground="#FFEADDF0" FontWeight="Bold" FontSize="12"/>
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Button x:Name="ButtonSettings" Style="{StaticResource GroupButton}" Grid.Column="2" Margin="0 0 5 0" Foreground="#49225b" Background="#FF49225B" BorderBrush="#49225b" BorderThickness="0" Cursor="Hand" Click="ButtonSettings_Click">
+                            <Label Content="Настройки" Foreground="#FFEADDF0" FontWeight="Bold" FontSize="12"/>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <GridSplitter Grid.Column="1" ShowsPreview="False" Width="2" HorizontalAlignment="Center" VerticalAlignment="Stretch" Background="#6e3482" BorderBrush="#6e3482" BorderThickness="50" />
+
+            <Grid Grid.Column="2">
+                <StackPanel x:Name="LargeContainer">
+
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="Coursework_KSIS.UserControls.ChattingUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Coursework_KSIS.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="boolToVis"/>
+    </UserControl.Resources>
+
+
+    <Grid  Background="#49225b">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.15*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#6e3482">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Height="60">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Имя пользователя" Foreground="#FFEADDF0" FontSize="14" FontWeight="Bold" x:Name="Name_LBL"/>
+                    <Label Content="@Username" Foreground="#FFEADDF0" FontSize="14" x:Name="Username_LBL"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        
+        <Grid Grid.Row="1" Height="475">
+            <ScrollViewer MaxHeight="450" VerticalScrollBarVisibility="Auto" x:Name="ScrollViewerMessages">
+                <StackPanel x:Name="MessagesContainer">
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <Grid Grid.Row="2" Height="70">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" MinWidth="50">
+                <Button x:Name="ButtonUpdate" Style="{StaticResource ExitButton}" 
+                    Grid.Column="2" Foreground="#49225b" 
+                    Background="#FF49225B" BorderBrush="#49225b" BorderThickness="0" 
+                    Cursor="Hand" Click="ButtonUpdate_Click">
+                    <Label Content="↻" Foreground="#FFEADDF0" FontWeight="Bold" FontSize="18"/>
+                </Button>
+            </Grid>
+            <Grid Grid.Column="1" MinWidth="150">
+                <TextBlock Margin="30,0,30,0" VerticalAlignment="Center" Panel.ZIndex="1" IsHitTestVisible="False" 
+                           FontSize="12" Text="Сообщение..." Foreground="#FFEADDF0"
+                           Visibility="{Binding ElementName=Msg_TB, Path=Text.IsEmpty, Converter={StaticResource boolToVis}}"/>
+                <TextBox Padding="15" Margin="15,10,15,10" BorderThickness="0" Style="{StaticResource enterTextBox}" x:Name="Msg_TB"/>
+            </Grid>
+            <Grid Grid.Column="2" MinWidth="50">
+                <Button x:Name="ButtonSend" Style="{StaticResource ExitButton}" 
+                        Grid.Column="2" Margin="0 0 5 0" Foreground="#49225b" 
+                        Background="#FF49225B" BorderBrush="#49225b" BorderThickness="0" 
+                        Cursor="Hand" Click="ButtonSend_Click">
+                    <Label Content="->" Foreground="#FFEADDF0" FontWeight="Bold" FontSize="18"/>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
